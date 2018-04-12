@@ -9,7 +9,7 @@ assembly_info:
   assembly_informational_version: '{version}'
 environment:
   COVERALLS_REPO_TOKEN:
-    secure: T4HU+3zXxONb3hR4a+rJbE0MctjwMjlbHrYVBaU4BRXp9OAWygYlNUnDZZkG7vHk
+    secure: IV9qisJvnmBoICrf+iAQFS32qR5kjrnEfuL7Fpor1arl9K7Y+9TZczWRqLM7CH6C
 before_build:
   - nuget restore ".\src\GameOfLife.sln"
 build:
