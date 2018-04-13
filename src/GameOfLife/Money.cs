@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace GameOfLife
@@ -25,6 +26,16 @@ namespace GameOfLife
             return m.AddMoney(this);
         }
 
+        /// <summary>Adds a money to this money. Forwards the request to
+        /// the AddMoney helper.</summary>
+        public void Add(List<IMoney> monies)
+        {
+            foreach (var m in monies)
+            {
+                m.AddMoney(this);
+            }
+        }
+
         public IMoney AddMoney(Money m)
         {
             if (m.Currency.Equals(Currency))
@@ -42,10 +53,7 @@ namespace GameOfLife
             get { return fAmount; }
         }
 
-        public String Currency
-        {
-            get { return fCurrency; }
-        }
+        public String Currency => fCurrency;
 
         public override bool Equals(Object anObject)
         {
@@ -66,10 +74,7 @@ namespace GameOfLife
             return fCurrency.GetHashCode() + fAmount;
         }
 
-        public bool IsZero
-        {
-            get { return Amount == 0; }
-        }
+        public bool IsZero => Amount == 0;
 
         public IMoney Multiply(int factor)
         {
