@@ -14,6 +14,7 @@ namespace GameOfLife
                     var isAlive = world.IsAlive(row, col);
                     Console.Write(isAlive ? "[#]" : "[ ]");
                 }
+                Console.WriteLine("This is Aidan's test line");
                 Console.WriteLine("");
             }
         }
