@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace GameOfLife.NUnit.Tests
 
@@ -171,7 +172,25 @@ namespace GameOfLife.NUnit.Tests
 
         }
 
+        [Test]
+        public void UpdateMoney()
+        {
+            var money = new Money(20, "INR");
+            var updatedMoney = money.Update(100, "USD");
+            Assert.AreNotEqual(updatedMoney, money);
+        }
 
+        [Test]
+        public void AddMoneyTest()
+        {
+            var money = new Money(20, "INR");
+
+            var monies = new List<IMoney>();
+            monies.Add(new Money(20, "INR"));
+            monies.Add(new Money(20, "USD"));
+
+            money.Add(monies);
+        }
 
         /// <summary>
 

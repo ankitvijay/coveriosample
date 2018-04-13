@@ -36,7 +36,7 @@ namespace GameOfLife
             }
         }
 
-        public IMoney AddMoney(int amount, string currency)
+        public IMoney Update(int amount, string currency)
         {
             return new Money(amount, currency);
         }
