@@ -36,6 +36,11 @@ namespace GameOfLife
             }
         }
 
+        public IMoney AddMoney(int amount, string currency)
+        {
+            return new Money(amount, currency);
+        }
+
         public IMoney AddMoney(Money m)
         {
             if (m.Currency.Equals(Currency))
